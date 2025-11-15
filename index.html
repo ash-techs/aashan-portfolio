@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aashan Shehzad - Full-Stack Developer</title>
+    <title>Aashan Shehzad - Portfolio</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #0077b5; /* LinkedIn Blue */
-            --secondary-color: #333;
-            --bg-color: #f3f2ef;
-            --card-bg: #ffffff;
-            --border-color: #ddd;
+            --primary-color: #0077b5;
+            --wa-green: #075E54;
+            --wa-light-green: #DCF8C6;
+            --wa-white: #FFFFFF;
+            --wa-bg: #E5DDD5;
+            --wa-header: #EDEDED;
+            --wa-text-primary: #333;
+            --wa-text-secondary: #666;
+            --wa-blue-tick: #34B7F1;
+            --wa-date-pill: #E1F2FB;
         }
 
         * {
@@ -24,1041 +29,1073 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--secondary-color);
-            background: var(--bg-color);
-            overflow-x: hidden;
-        }
-
-        /* --- Reusable Card --- */
-        .card {
-            background: var(--card-bg);
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            border: 1px solid var(--border-color);
-            padding: 1.5rem;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        /* --- Header & Navigation --- */
-        header {
-            background: var(--card-bg);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--secondary-color);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* --- New Profile Header (Replaces Hero) --- */
-        .profile-header {
-            margin-top: 60px; /* Offset for fixed header */
-            position: relative;
-        }
-
-        .profile-card {
-            background: var(--card-bg);
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-            margin-top: 3rem; /* Space for the profile pic */
-        }
-        
-        .profile-banner {
-            height: 200px;
-            background: url('cover.jpg') center/cover no-repeat;
-            background-color: var(--primary-color);
-        }
-        
-        .profile-picture {
-            position: absolute;
-            top: 140px; /* (Banner height + margin-top) - (pic height / 2) */
-            left: 2rem;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid var(--card-bg);
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-            /* Placeholder image with initials */
-            background: url('main.jpg') center/cover no-repeat;
+            background: linear-gradient(135deg, #f3f2ef, #dde1e7);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 4rem;
-            font-weight: 700;
+            min-height: 100vh;
+            padding: 0.5rem;
+            overflow: hidden;
+        }
+
+        .smartphone {
+            max-width: 375px;
+            max-height: 812px;
+            width: 100%;
+            height: 95vh;
+            background: #111;
+            border: 14px solid black;
+            border-radius: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .smartphone-notch {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 28px;
+            background: black;
+            border-radius: 0 0 16px 16px;
+            z-index: 100;
+        }
+
+        .chat-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            background: var(--wa-bg);
+            background-image: url('https://i.pinimg.com/originals/85/74/de/8574de0142d75501d668c1c4636c1171.png');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            background: var(--wa-header);
+            border-bottom: 1px solid #ddd;
             z-index: 10;
         }
-
-        .profile-info {
-            padding: 1.5rem;
-            padding-top: 75px; /* Space for overlapped picture */
+        .chat-header .avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 0.75rem;
+            position: relative;
         }
-
-        .profile-info h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+        .chat-header .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-
-        .profile-info .headline {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--secondary-color);
+        .chat-header .avatar::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            width: 12px;
+            height: 12px;
+            background: #4CAF50;
+            border: 2px solid white;
+            border-radius: 50%;
         }
-
-        .profile-info .location {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 1.5rem;
+        .chat-header .info {
+            flex-grow: 1;
         }
-
-        .profile-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 10px 24px;
-            border-radius: 20px;
-            text-decoration: none;
+        .chat-header .info h3 {
+            font-size: 1.1rem;
             font-weight: 600;
-            transition: all 0.3s;
-            display: inline-block;
-            border: 2px solid transparent;
+            color: var(--wa-text-primary);
         }
-
-        .btn-primary {
-            background: var(--primary-color);
-            color: white;
+        .chat-header .info p {
+            font-size: 0.8rem;
+            color: var(--wa-text-secondary);
         }
-
-        .btn-primary:hover {
-            background: #005a87;
+        .chat-header .actions i {
+            font-size: 1.25rem;
+            color: var(--wa-text-secondary);
+            margin-left: 1rem;
+            cursor: pointer;
+            transition: color 0.2s;
         }
-
-        .btn-secondary {
-            background: transparent;
+        .chat-header .actions i:hover {
             color: var(--primary-color);
-            border-color: var(--primary-color);
         }
 
-        .btn-secondary:hover {
-            background: rgba(0, 119, 181, 0.1);
-        }
-
-        /* --- Section Styling --- */
-        section {
-            padding: 3rem 0;
+        .chat-body {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 1rem 0.75rem;
+            display: flex;
+            flex-direction: column;
+            scroll-behavior: smooth;
         }
         
-        #home {
-            padding: 0;
-            padding-bottom: 3rem;
+        .date-separator {
+            align-self: center;
+            background: var(--wa-date-pill);
+            color: #555;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            margin: 0.5rem 0 1rem 0;
+            box-shadow: 0 1px 1px rgba(0,0,0,0.05);
         }
 
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--secondary-color);
-            padding-left: 1.5rem;
-        }
-
-        /* --- About Section --- */
-        .about-content {
-            display: grid;
-            grid-template-columns: 3fr 2fr;
-            gap: 1.5rem;
-            align-items: start;
+        .chat-bubble {
+            max-width: 80%;
+            padding: 0.6rem 0.8rem;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+            position: relative;
+            font-size: 0.95rem;
+            animation: fadeIn 0.3s ease-out;
+            word-wrap: break-word;
         }
         
-        .about-text h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--secondary-color);
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        .about-text p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
+        .chat-bubble.bot {
+            background: var(--wa-white);
+            align-self: flex-start;
+            border-top-left-radius: 0;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .chat-bubble.bot.typing {
+            font-style: italic;
+            color: var(--wa-text-secondary);
+            padding: 0.8rem 1rem;
+        }
+        .typing-indicator span {
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            background-color: #999;
+            display: inline-block;
+            animation: pulse 1s infinite ease-in-out;
+            margin: 0 1px;
+        }
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .chat-bubble.user {
+            background: var(--wa-light-green);
+            align-self: flex-end;
+            border-top-right-radius: 0;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .chat-bubble .timestamp {
+            font-size: 0.7rem;
+            color: #999;
+            float: right;
+            margin-left: 0.75rem;
+            margin-top: 0.5rem;
+        }
+        .chat-bubble.user .timestamp i {
+            font-size: 0.8rem;
+            color: var(--wa-blue-tick);
+            margin-left: 0.2rem;
+        }
+
+        .chat-footer {
+            flex-shrink: 0;
+            padding: 0.75rem;
+            background: var(--wa-bg);
+            border-top: 1px solid #ddd;
+            z-index: 10;
+        }
+        
+        #name-input-area {
+            display: flex;
+            background: var(--wa-white);
+            border-radius: 25px;
+            padding: 0.5rem;
+            align-items: center;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        #name-input-area input {
+            flex-grow: 1;
+            border: none;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            padding: 0.5rem;
+            background: transparent;
+        }
+        #name-input-area button {
+            background: var(--wa-green);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        #name-input-area button:hover {
+            background: #0a8376;
+            transform: scale(1.05);
+        }
+
+        #options-area {
+            display: none;
+            flex-direction: column;
+            gap: 0.5rem;
+            max-height: 250px;
+            overflow-y: auto;
+        }
+        #options-area button {
+            background: var(--wa-white);
+            color: var(--primary-color);
+            border: 1px solid #e0e0e0;
+            padding: 0.9rem;
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        #options-area button i {
+            width: 20px;
+            text-align: center;
             color: #555;
         }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+        #options-area button:hover {
+            background: #f8f8f8;
+            border-color: #ccc;
+            transform: translateX(5px);
+        }
+        #options-area button:active {
+            transform: scale(0.98);
+            background: #f0f0f0;
+        }
+        
+        #options-area button.back-button {
+            color: #e63946;
+            border-color: #e63946;
+        }
+        #options-area button.back-button:hover {
+            background: #fff5f5;
         }
 
-        .stat-box {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-            border: 1px solid var(--border-color);
-        }
-
-        .stat-box h4 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+        .chat-bubble h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
             color: var(--primary-color);
         }
-
-        .stat-box p {
-            color: #666;
+        .chat-bubble p {
+            margin-bottom: 0.5rem;
         }
-
-        /* --- Skills Section --- */
+        .chat-bubble a {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .chat-bubble a:hover {
+            text-decoration: underline;
+        }
+        
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-top: 0.75rem;
         }
-
         .skill-card {
-            transition: all 0.3s;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            padding: 0.75rem;
+            font-size: 0.85rem;
         }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
         .skill-card i {
-            font-size: 2.5rem;
             color: var(--primary-color);
-            margin-bottom: 1rem;
+            margin-right: 0.5rem;
         }
-
         .skill-card h3 {
-            margin-bottom: 0.5rem;
-            color: var(--secondary-color);
-        }
-
-        .skill-card p {
             font-size: 0.9rem;
-            color: #666;
+            margin-bottom: 0.5rem;
+            color: #333;
         }
-
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
+            gap: 0.25rem;
+            margin-top: 0.5rem;
         }
-
         .tag {
             background: #eef3f8;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.75rem;
             color: var(--primary-color);
             font-weight: 500;
         }
 
-        /* --- Experience Section --- */
-        .experience-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
+        .project-card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            margin-top: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+        .project-image img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            display: block;
+        }
+        .project-content {
+            padding: 1rem;
+        }
+        .project-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .project-content p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+        .project-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: var(--primary-color);
+            font-size: 0.85rem;
+            font-weight: 600;
         }
         
         .experience-item {
             display: flex;
-            gap: 1.5rem;
+            gap: 0.75rem;
+            align-items: flex-start;
+            background: #f9f9f9;
+            padding: 0.75rem;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin-top: 0.5rem;
         }
-        
         .experience-icon {
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: var(--primary-color);
-            padding-top: 0.25rem;
+            margin-top: 0.25rem;
         }
-
         .experience-item h3 {
-            color: var(--secondary-color);
-            font-size: 1.25rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .experience-item .company {
-            font-weight: 600;
-            color: #444;
-            margin-bottom: 0.3rem;
-        }
-
-        .experience-item .duration {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .experience-item p:last-child {
-            color: #555;
-        }
-
-        /* --- Projects Section --- */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .project-card {
-            transition: all 0.3s;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .project-card .project-icon {
             color: var(--primary-color);
-            padding: 2rem;
-            text-align: center;
-            font-size: 3rem;
+            font-size: 0.95rem;
+            margin: 0 0 0.25rem 0;
         }
-
-        .project-card .project-content {
-            padding: 0 1.5rem 1.5rem;
+        .experience-item .company {
+            font-weight: 500;
+            color: #555;
+            font-size: 0.85rem;
+            margin: 0 0 0.25rem 0;
         }
-
-        .project-card h3 {
+        .experience-item .duration {
+            font-size: 0.75rem;
+            color: #999;
             margin-bottom: 0.5rem;
-            color: var(--secondary-color);
         }
-
-        .project-card p {
+        .experience-item .description {
+            font-size: 0.85rem;
             color: #666;
-            font-size: 0.9rem;
-        }
-
-        /* --- Contact Section --- */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr; /* Changed from 1fr 1fr */
-            gap: 1.5rem;
-            max-width: 600px;
-            margin: 0 auto;
+            line-height: 1.4;
         }
         
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
         .contact-item {
             display: flex;
             align-items: center;
             gap: 1rem;
-            padding: 1rem;
+            padding: 0.75rem;
         }
-
         .contact-item i {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             color: var(--primary-color);
-            width: 30px;
+            width: 25px;
         }
-        
+        .contact-item div {
+            flex-grow: 1;
+        }
         .contact-item h4 {
-            font-size: 1rem;
+            font-size: 0.8rem;
+            color: #555;
+            font-weight: 500;
             margin: 0;
-            color: #444;
         }
-        .contact-item p {
-            font-size: 0.9rem;
-            margin: 0;
-            color: #666;
-        }
-        .contact-item a {
-            font-size: 0.9rem;
-            margin: 0;
-            color: #666;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .contact-item a:hover {
-            color: var(--primary-color);
-        }
-
-
-        /* --- Footer --- */
-        footer {
-            background: var(--card-bg);
-            color: #666;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .social-links a {
-            color: #666;
-            font-size: 1.5rem;
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-
-        /* --- WhatsApp Chatbot (Original) --- */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 30px;
-            right: 30px;
-            background: #25d366;
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-            z-index: 999;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-
-        .whatsapp-chat {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            width: 350px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
-            z-index: 998;
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .whatsapp-chat.active {
-            display: flex;
-        }
-
-        .whatsapp-header {
-            background: #075e54;
-            color: white;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .whatsapp-header-info {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .whatsapp-avatar {
-            width: 40px;
-            height: 40px;
-            background: #25d366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .whatsapp-close {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .whatsapp-body {
-            padding: 1rem;
-            height: 300px;
-            overflow-y: auto;
-            background: #e5ddd5;
-        }
-
-        .whatsapp-message {
-            background: white;
-            padding: 0.8rem;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-        }
-
-        .whatsapp-footer {
-            padding: 1rem;
-            border-top: 1px solid #ddd;
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .whatsapp-footer input {
-            flex: 1;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 25px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .whatsapp-footer button {
-            background: #25d366;
-            color: white;
-            border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            cursor: pointer;
+        .contact-item a, .contact-item p {
+            font-size: 0.95rem;
             font-weight: 600;
+            margin: 0;
         }
 
-        /* --- Responsive --- */
-        @media (max-width: 992px) {
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            .stats {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            }
+        .education-card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            padding: 1rem;
+            margin-top: 0.75rem;
         }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                position: absolute;
-                right: 0;
-                top: 100%;
-                background: var(--card-bg);
-                flex-direction: column;
-                width: 100%;
-                padding: 2rem;
-                gap: 1rem;
-                display: none;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-            }
+        .education-card h3 {
+            color: var(--primary-color);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .education-card .degree {
+            font-weight: 600;
+            color: #333;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+        .education-card .duration {
+            font-size: 0.8rem;
+            color: #999;
+            margin-bottom: 0.5rem;
+        }
+        .education-card .activities {
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+        }
 
-            .nav-links.active {
-                display: flex;
+        @media (max-width: 400px) {
+            .smartphone {
+                border-width: 8px;
+                border-radius: 25px;
+                height: 98vh;
             }
-
-            .menu-toggle {
-                display: block;
-            }
-            
-            .profile-banner {
-                height: 120px;
-            }
-            
-            .profile-picture {
-                top: 100px;
-                left: 50%;
-                transform: translateX(-50%);
+            .smartphone-notch {
+                height: 20px;
                 width: 120px;
-                height: 120px;
-                font-size: 3rem;
-            }
-            
-            .profile-info {
-                padding-top: 80px;
-                text-align: center;
-            }
-
-            .profile-info h1 {
-                font-size: 2rem;
-            }
-            
-            .profile-buttons {
-                justify-content: center;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .whatsapp-chat {
-                width: calc(100% - 40px);
-                right: 20px;
-            }
-            
-            .whatsapp-float {
-                right: 20px;
-                bottom: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">A. Shehzad</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Certifications</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
-        </nav>
-    </header>
-
-    <main class="container">
-        <section id="home">
-            <div class="profile-header">
-                <div class="profile-card">
-                    <div class="profile-banner"></div>
-                    <div class="profile-info">
-                        <h1>AASHAN SHEHZAD</h1>
-                        <p class="headline">Full-Stack Developer | AI & Machine Learning | Cybersecurity Enthusiast</p>
-                        <p class="location"><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan</p>
-                        <div class="profile-buttons">
-                            <a href="#contact" class="btn btn-primary">Hire Me</a>
-                            <a href="#projects" class="btn btn-secondary">View Projects</a>
-                        </div>
-                    </div>
+    
+    <div class="smartphone">
+        <div class="smartphone-notch"></div>
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="avatar">
+                    <img src="main.jpg" alt="Aashan Shehzad">
                 </div>
-                <div class="profile-picture"></div>
-            </div>
-        </section>
-
-        <section id="about">
-            <div class="about-content">
-                <div class="card">
-                    <h2 class="section-title">About Me</h2>
-                    <div class="about-text">
-                        <h3>Building Scalable & Intelligent Solutions</h3>
-                        <p>A dynamic and results-oriented developer with deep expertise in full-stack web development (React, Node.js, .NET), Enterprise Resource Planning (ERP), and E-Commerce systems.</p>
-                        <p>Proven ability to manage projects from concept to deployment, with a strong foundation in software house operations and start-up environments.</p>
-                        <p>Passionate about leveraging emerging technologies, with hands-on project experience in Artificial Intelligence, Machine Learning (NLP, GANs), and Cybersecurity (Blockchain, DDoS Detection).</p>
-                    </div>
+                <div class="info">
+                    <h3>Aashan Shehzad</h3>
+                    <p id="chat-status">online</p>
                 </div>
-                <div class="stats">
-                    <div class="stat-box">
-                        <h4>18+</h4>
-                        <p>Projects Completed</p>
-                    </div>
-                    <div class="stat-box">
-                        <h4>10</h4>
-                        <p>Pro Certifications</p>
-                    </div>
-                    <div class="stat-box">
-                        <h4>15+</h4>
-                        <p>Tools & Technologies</p>
-                    </div>
-                    <div class="stat-box">
-                        <h4>5+</h4>
-                        <p>AI/ML Projects</p>
-                    </div>
+                <div class="actions">
+                    <i class="fas fa-video"></i>
+                    <i class="fas fa-phone"></i>
                 </div>
             </div>
-        </section>
 
-        <section id="skills">
-            <div class="card">
-                <h2 class="section-title">Technical Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-card card">
-                        <i class="fab fa-react"></i>
-                        <h3>Frontend Development</h3>
-                        <p>Modern, responsive, and high-performance user interfaces.</p>
-                        <div class="skill-tags">
-                            <span class="tag">React.js</span>
-                            <span class="tag">TypeScript</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">Tailwind CSS</span>
-                            <span class="tag">HTML5/CSS3</span>
-                        </div>
-                    </div>
-                    <div class="skill-card card">
-                        <i class="fas fa-server"></i>
-                        <h3>Backend & Database</h3>
-                        <p>Robust server-side logic and scalable database architecture.</p>
-                        <div class="skill-tags">
-                            <span class="tag">Node.js</span>
-                            <span class="tag">ASP.NET Core</span>
-                            <span class="tag">PostgreSQL</span>
-                            <span class="tag">MySQL</span>
-                            <span class="tag">REST APIs</span>
-                        </div>
-                    </div>
-                    <div class="skill-card card">
-                        <i class="fas fa-brain"></i>
-                        <h3>AI & Machine Learning</h3>
-                        <p>Implementing intelligent models for complex problem-solving.</p>
-                        <div class="skill-tags">
-                            <span class="tag">PyTorch</span>
-                            <span class="tag">Transformers</span>
-                            <span class="tag">NLP</span>
-                            <span class="tag">StyleGAN</span>
-                            <span class="tag">CLIP</span>
-                        </div>
-                    </div>
-                    <div class="skill-card card">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>Cybersecurity & Blockchain</h3>
-                        <p>Securing applications with modern and decentralized tech.</p>
-                        <div class="skill-tags">
-                            <span class="tag">WebAuthn</span>
-                            <span class="tag">Solidity</span>
-                            <span class="tag">Hardhat</span>
-                            <span class="tag">Pen Testing</span>
-                            <span class="tag">SIEM</span>
-                        </div>
-                    </div>
-                    <div class="skill-card card">
-                        <i class="fas fa-building"></i>
-                        <h3>Industry Knowledge</h3>
-                        <p>Domain expertise in business and software operations.</p>
-                        <div class="skill-tags">
-                            <span class="tag">ERP Systems</span>
-                            <span class="tag">E-Commerce</span>
-                            <span class="tag">Start-up Management</span>
-                            <span class="tag">Business Ownership</span>
-                        </div>
-                    </div>
-                    <div class="skill-card card">
-                        <i class="fas fa-code"></i>
-                        <h3>Core Languages</h3>
-                        <p>Strong foundation in multiple programming paradigms.</p>
-                        <div class="skill-tags">
-                            <span class="tag">C#</span>
-                            <span class="tag">Java</span>
-                            <span class="tag">C++</span>
-                            <span class="tag">JavaScript/TS</span>
-                            <span class="tag">PHP</span>
-                        </div>
-                    </div>
+            <div class="chat-body" id="chat-body"></div>
+
+            <div class="chat-footer">
+                <div id="name-input-area">
+                    <input type="text" id="name-input" placeholder="Type your name...">
+                    <button id="start-chat-btn"><i class="fas fa-paper-plane"></i></button>
                 </div>
+                <div id="options-area"></div>
             </div>
-        </section>
-
-        <section id="experience">
-            <div class="card">
-                <h2 class="section-title">Certifications & Internships</h2>
-                <div class="experience-list">
-                    
-                    <div class="experience-item">
-                        <div class="experience-icon"><i class="fas fa-certificate"></i></div>
-                        <div class="experience-content">
-                            <h3>SIEM Analyst</h3>
-                            <p class="company">Fortinet Learning</p>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon"><i class="fas fa-certificate"></i></div>
-                        <div class="experience-content">
-                            <h3>Penetration Testing Internship</h3>
-                            <p class="company">Hactify Cyber Security</p>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon"><i class="fas fa-certificate"></i></div>
-                        <div class="experience-content">
-                            <h3>Gen-AI Internship</h3>
-                            <p class="company">ITSOLERA Pvt Ltd</p>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon"><i class="fas fa-certificate"></i></div>
-                        <div class="experience-content">
-                            <h3>Data Analytics</h3>
-                            <p class="company">Digiskills</p>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon"><i class="fas fa-certificate"></i></div>
-                        <div class="experience-content">
-                            <h3>Freelancing</h3>
-                            <p class="company">Digiskills</p>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon"><i class="fas fa-certificate"></i></div>
-                        <div class="experience-content">
-                            <h3>AI Literacy</h3>
-                            <p class="company">IBM</p>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon"><i class="fas fa-certificate"></i></div>
-                        <div class="experience-content">
-                            <h3>Ivanti Endpoint Manager Certification</h3>
-                            <p class="company">Ivanti</p>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon"><i class="fas fa-certificate"></i></div>
-                        <div class="experience-content">
-                            <h3>Cyber Security Fundamentals</h3>
-                            <p class="company">IBM</p>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon"><i class="fas fa-certificate"></i></div>
-                        <div class="experience-content">
-                            <h3>Cyber Security Certification</h3>
-                            <p class="company">Fortinet</p>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon"><i class="fas fa-certificate"></i></div>
-                        <div class="experience-content">
-                            <h3>AI Fundamentals</h3>
-                            <p class="company">IBM</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
-             <div class="card">
-                <h2 class="section-title">Featured Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card card">
-                        <div class="project-icon"><i class="fas fa-tasks"></i></div>
-                        <div class="project-content">
-                            <h3>Enterprise Resource Planner (ERP)</h3>
-                            <p>Complete business dashboard: HRM, Finance, Inventory, Sales, & Biometric (WebAuthn) Login. (React, Node.js, PostgreSQL)</p>
-                        </div>
-                    </div>
-                    <div class="project-card card">
-                        <div class="project-icon"><i class="fas fa-shield-virus"></i></div>
-                        <div class="project-content">
-                            <h3>DDoS Attack Detection System</h3>
-                            <p>Final Year Project using ML (KNN, MLP, DT) for protocol-based attack detection (TCP, UDP, ICMP) and recommendation.</p>
-                        </div>
-                    </div>
-                    <div class="project-card card">
-                        <div class="project-icon"><i class="fab fa-ethereum"></i></div>
-                        <div class="project-content">
-                            <h3>Blockchain Authentication System</h3>
-                            <p>Secure login system using Solidity and Hardhat to store and retrieve visitor data on-chain via PHP frontend.</p>
-                        </div>
-                    </div>
-                    <div class="project-card card">
-                        <div class="project-icon"><i class="fas fa-file-alt"></i></div>
-                        <div class="project-content">
-                            <h3>Intelligent Document Summarizer</h3>
-                            <p>NLP & Transformers (at ITSOLERA) to summarize large text/files into .docx, .pdf, or .txt formats.</p>
-                        </div>
-                    </div>
-                    <div class="project-card card">
-                        <div class="project-icon"><i class="fas fa-image"></i></div>
-                        <div class="project-content">
-                            <h3>Text-to-Image Generator (StyleGAN)</h3>
-                            <p>AI model that generates images from text prompts using CLIP, PyTorch, and a Streamlit frontend.</p>
-                        </div>
-                    </div>
-                    <div class="project-card card">
-                        <div class="project-icon"><i class="fas fa-store"></i></div>
-                        <div class="project-content">
-                            <h3>Wefixtech E-Commerce Store</h3>
-                            <p>Full e-commerce store built with React, PHP backend, and Stripe Checkout integration for payments.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <div class="card">
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <div class="contact-item card">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Location</h4>
-                                <p>Islamabad, Pakistan</p>
-                            </div>
-                        </div>
-                        <div class="contact-item card">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <a href="mailto:shehzadaashan@gmail.com">shehzadaashan@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item card">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Phone</h4>
-                                <a href="tel:+923157692998">+92 315 7692998</a>
-                            </div>
-                        </div>
-                        <div class="contact-item card">
-                            <i class="fab fa-linkedin"></i>
-                            <div>
-                                <h4>LinkedIn</h4>
-                                <a href="https://www.linkedin.com/in/aashan-shehzad-7b659a276/" target="_blank">linkedin.com/in/aashan-shehzad...</a>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/aashan-shehzad-7b659a276/" target="_blank"><i class="fab fa-linkedin"></i></a>
-             <a href="https://wa.me/923157692998" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        <p>&copy; 2025 Aashan Shehzad. All Rights Reserved.</p>
-    </footer>
-
-    <div class="whatsapp-float" onclick="toggleChat()">
-        <i class="fab fa-whatsapp"></i>
-    </div>
-
-    <div class="whatsapp-chat" id="whatsappChat">
-        <div class="whatsapp-header">
-            <div class="whatsapp-header-info">
-                <div class="whatsapp-avatar">
-                    <i class="fas fa-user"></i>
-                </div>
-                <div>
-                    <strong>Aashan Shehzad</strong>
-                    <p style="font-size: 0.8rem; margin: 0;">Online</p>
-                </div>
-            </div>
-            <button class="whatsapp-close" onclick="toggleChat()">×</button>
-        </div>
-        <div class="whatsapp-body">
-            <div class="whatsapp-message">
-                <strong>Aashan Shehzad</strong>
-                <p>Hi there! 👋 How can I help you today?</p>
-                <small style="color: #999;">Just now</small>
-            </div>
-        </div>
-        <div class="whatsapp-footer">
-            <input type="text" id="whatsappInput" placeholder="Type a message...">
-            <button onclick="sendWhatsApp()"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
 
     <script>
-        // Mobile Menu Toggle
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
+        const mainMenu = {
+            'about': { title: 'About Me', icon: 'fas fa-user-tie' },
+            'experience': { title: 'Work Experience', icon: 'fas fa-briefcase' },
+            'education': { title: 'Education', icon: 'fas fa-graduation-cap' },
+            'skills': { title: 'Tech Stack', icon: 'fas fa-cogs', subMenu: 'skillsMenu' },
+            'projects': { title: 'Featured Projects', icon: 'fas fa-tasks', subMenu: 'projectsMenu' },
+            'certifications': { title: 'Certifications', icon: 'fas fa-certificate' },
+            'contact': { title: 'Get In Touch', icon: 'fas fa-paper-plane' }
+        };
 
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const headerOffset = 80; // Height of fixed header + small buffer
-                    const elementPosition = target.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        const subMenus = {
+            'skillsMenu': {
+                'frontend': { title: 'Frontend', icon: 'fab fa-react' },
+                'backend': { title: 'Backend & Database', icon: 'fas fa-server' },
+                'ai': { title: 'AI & Machine Learning', icon: 'fas fa-brain' },
+                'security': { title: 'Cybersecurity & Blockchain', icon: 'fas fa-shield-alt' },
+                'menu': { title: '⬅️ Back to Main Menu', icon: 'fas fa-arrow-left', isBack: true }
+            },
+            'projectsMenu': {
+                'ddos': { title: 'DDoS Detection System', icon: 'fas fa-shield-virus' },
+                'blockchain': { title: 'Blockchain Authentication', icon: 'fab fa-ethereum' },
+                'erp': { title: 'ERP System', icon: 'fas fa-tasks' },
+                'ecommerce': { title: 'E-Commerce Projects', icon: 'fas fa-shopping-cart', subMenu: 'ecommerceMenu' },
+                'genai': { title: 'Gen AI Projects', icon: 'fas fa-robot', subMenu: 'genaiMenu' },
+                'websites': { title: 'Website Projects', icon: 'fas fa-globe', subMenu: 'websitesMenu' },
+                'others': { title: 'Other Projects', icon: 'fas fa-code', subMenu: 'othersMenu' },
+                'menu': { title: '⬅️ Back to Main Menu', icon: 'fas fa-arrow-left', isBack: true }
+            },
+            'genaiMenu': {
+                'summarizer': { title: 'Document Summarizer', icon: 'fas fa-file-alt' },
+                'texttoimage': { title: 'Text to Image Generator', icon: 'fas fa-image' },
+                'digitgen': { title: 'Handwritten Digit Generator', icon: 'fas fa-hashtag' },
+                'projectsMenu': { title: '⬅️ Back to Projects', icon: 'fas fa-arrow-left', isBack: true }
+            },
+            'ecommerceMenu': {
+                'wefixtech': { title: 'WeFix Tech Store', icon: 'fas fa-laptop' },
+                'projectsMenu': { title: '⬅️ Back to Projects', icon: 'fas fa-arrow-left', isBack: true }
+            },
+            'websitesMenu': {
+                'ahs': { title: 'AHS Technologies', icon: 'fas fa-building' },
+                'ahsmed': { title: 'AHS Medical Billing', icon: 'fas fa-hospital' },
+                'utbuilders': { title: 'U&T Builders', icon: 'fas fa-hard-hat' },
+                'bakery': { title: 'Bakery Website', icon: 'fas fa-bread-slice' },
+                'modative': { title: 'Modative Company', icon: 'fas fa-home' },
+                'tooty': { title: 'Tooty AI Chatbot', icon: 'fas fa-comments' },
+                'projectsMenu': { title: '⬅️ Back to Projects', icon: 'fas fa-arrow-left', isBack: true }
+            },
+            'othersMenu': {
+                'employapi': { title: 'Employee REST API', icon: 'fas fa-server' },
+                'studentsys': { title: 'Student Management Systems', icon: 'fas fa-users' },
+                'simpleauth': { title: 'Biometric Authentication', icon: 'fas fa-fingerprint' },
+                'calculator': { title: 'Assembly Calculator', icon: 'fas fa-calculator' },
+                'projectsMenu': { title: '⬅️ Back to Projects', icon: 'fas fa-arrow-left', isBack: true }
+            }
+        };
+
+        const messageData = {
+            'about': [
+                `<h3>Building Scalable & Intelligent Solutions</h3>
+                 <p>A dynamic and results-oriented developer with deep expertise in full-stack web development (React, Node.js, .NET), Enterprise Resource Planning (ERP), and E-Commerce systems.</p>
+                 <p>Proven ability to manage projects from concept to deployment, with a strong foundation in software house operations and start-up environments.</p>
+                 <p>Passionate about leveraging emerging technologies, with hands-on project experience in Artificial Intelligence, Machine Learning (NLP, GANs), and Cybersecurity (Blockchain, DDoS Detection).</p>`
+            ],
+            'experience': [
+                `Here's my professional journey:`,
+                `<div class="experience-item">
+                    <div class="experience-icon"><i class="fas fa-rocket"></i></div>
+                    <div>
+                        <h3>Founder</h3>
+                        <p class="company">Ash Tech's - Virtual Software House</p>
+                        <p class="duration">Jul 2025 - Present · Full-time · Remote</p>
+                        <p class="description">Crafting innovative software solutions that transform digital dreams into reality. From cutting-edge AI to stunning web experiences, delivering the future of technology.</p>
+                    </div>
+                 </div>
+                 <div class="experience-item">
+                    <div class="experience-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div>
+                        <h3>SOC Analyst Trainee & Full Stack Developer</h3>
+                        <p class="company">AHS-TECHNOLOGIES (Pvt Limited)</p>
+                        <p class="duration">Jul 2025 - Present · Full-time · Islamabad, Pakistan</p>
+                        <p class="description">SOC Analyst L1 specializing in SIEM, SOAR, PAM, SaaS, SAN, NAS. Working with FORTINET, TREND MICRO, IVANTI, and H3C solutions. Developing websites, management systems, and custom chatbots using modern frameworks.</p>
+                    </div>
+                 </div>
+                 <div class="experience-item">
+                    <div class="experience-icon"><i class="fas fa-brain"></i></div>
+                    <div>
+                        <h3>Gen AI Intern</h3>
+                        <p class="company">ITSOLERA PVT LTD</p>
+                        <p class="duration">Jul 2024 - Oct 2024 · Internship · Remote</p>
+                        <p class="description">Developed AI-powered solutions including document summarizers and image generation systems using NLP and deep learning.</p>
+                    </div>
+                 </div>
+                 <div class="experience-item">
+                    <div class="experience-icon"><i class="fas fa-user-secret"></i></div>
+                    <div>
+                        <h3>Cyber Security Intern</h3>
+                        <p class="company">Hacktify Cyber Security</p>
+                        <p class="duration">Jul 2024 - Aug 2024 · Internship · Remote</p>
+                        <p class="description">Gained hands-on experience in penetration testing and vulnerability assessment.</p>
+                    </div>
+                 </div>`
+            ],
+            'education': [
+                `<div class="education-card">
+                    <h3>National University of Modern Languages (NUML)</h3>
+                    <p class="degree">Bachelor of Science - BS, Computer Science</p>
+                    <p class="duration">Sep 2021 - Jun 2025</p>
+                    <p class="activities">Activities: Cricket, Football, Volleyball, Badminton</p>
+                 </div>`
+            ],
+            'certifications': [
+                `Here are my professional certifications:`,
+                `<div class="experience-item">
+                    <div class="experience-icon"><i class="fas fa-certificate"></i></div>
+                    <div><h3>SIEM Analyst</h3><p class="company">Fortinet Learning</p></div>
+                 </div>
+                 <div class="experience-item">
+                    <div class="experience-icon"><i class="fas fa-certificate"></i></div>
+                    <div><h3>Penetration Testing Internship</h3><p class="company">Hactify Cyber Security</p></div>
+                 </div>
+                 <div class="experience-item">
+                    <div class="experience-icon"><i class="fas fa-certificate"></i></div>
+                    <div><h3>Gen-AI Internship</h3><p class="company">ITSOLERA Pvt Ltd</p></div>
+                 </div>
+                 <div class="experience-item">
+                    <div class="experience-icon"><i class="fas fa-certificate"></i></div>
+                    <div><h3>Data Analytics</h3><p class="company">Digiskills</p></div>
+                 </div>
+                 <div class="experience-item">
+                    <div class="experience-icon"><i class="fas fa-certificate"></i></div>
+                    <div><h3>AI Literacy</h3><p class="company">IBM</p></div>
+                 </div>
+                 <div class="experience-item">
+                    <div class="experience-icon"><i class="fas fa-certificate"></i></div>
+                    <div><h3>Cyber Security Fundamentals</h3><p class="company">IBM</p></div>
+                 </div>`
+            ],
+            'contact': [
+                `The best ways to reach me:
+                 <div class="contact-info" style="margin-top: 0.75rem;">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:shehzadaashan@gmail.com">shehzadaashan@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>Phone / WhatsApp</h4>
+                            <a href="tel:+923157692998">+92 315 7692998</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/aashan-shehzad-7b659a276/" target="_blank">linkedin.com/in/aashan-shehzad</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Islamabad, Pakistan</p>
+                        </div>
+                    </div>
+                 </div>`
+            ],
+            'frontend': [
+                `<div class="skill-card">
+                    <h3><i class="fab fa-react"></i> Frontend Development</h3>
+                    <p>Modern, responsive, and high-performance user interfaces.</p>
+                    <div class="skill-tags"><span class="tag">React.js</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">Tailwind</span><span class="tag">HTML/CSS</span></div>
+                 </div>`
+            ],
+            'backend': [
+                `<div class="skill-card">
+                    <h3><i class="fas fa-server"></i> Backend & Database</h3>
+                    <p>Robust server-side logic and scalable database architecture.</p>
+                    <div class="skill-tags"><span class="tag">Node.js</span><span class="tag">ASP.NET Core</span><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">REST APIs</span><span class="tag">PHP</span></div>
+                 </div>`
+            ],
+            'ai': [
+                 `<div class="skill-card">
+                    <h3><i class="fas fa-brain"></i> AI & Machine Learning</h3>
+                    <p>Implementing intelligent models for complex problem-solving.</p>
+                    <div class="skill-tags"><span class="tag">PyTorch</span><span class="tag">Transformers</span><span class="tag">NLP</span><span class="tag">StyleGAN</span><span class="tag">CLIP</span><span class="tag">GANs</span></div>
+                 </div>`
+            ],
+            'security': [
+                `<div class="skill-card">
+                    <h3><i class="fas fa-shield-alt"></i> Cybersecurity & Blockchain</h3>
+                    <p>Securing applications with modern and decentralized tech.</p>
+                    <div class="skill-tags"><span class="tag">WebAuthn</span><span class="tag">Solidity</span><span class="tag">Hardhat</span><span class="tag">Pen Testing</span><span class="tag">SIEM</span><span class="tag">SOAR</span></div>
+                 </div>`
+            ],
+            'ddos': [
+                `<div class="project-card">
+                    <div class="project-content">
+                        <h3>DDoS Attack Detection & Recommendation System</h3>
+                        <p class="duration">Sep 2024 - Jun 2025 | Final Year Project</p>
+                        <p>Advanced ML system using KNN, MLP, and Decision Trees for protocol-based attack detection (TCP, UDP, ICMP) with intelligent recommendations.</p>
+                        <div class="skill-tags"><span class="tag">Machine Learning</span><span class="tag">AI</span><span class="tag">Cybersecurity</span><span class="tag">Python</span></div>
+                    </div>
+                 </div>`
+            ],
+            'blockchain': [
+                `<div class="project-card">
+                    <div class="project-content">
+                        <h3>Blockchain Authentication System</h3>
+                        <p class="duration">Jan 2025 - Mar 2025</p>
+                        <p>Secure login system using Solidity and Hardhat to store and retrieve visitor data on-chain via PHP frontend. Revolutionary approach to decentralized authentication.</p>
+                        <div class="skill-tags"><span class="tag">Solidity</span><span class="tag">Hardhat</span><span class="tag">PHP</span><span class="tag">Blockchain</span></div>
+                    </div>
+                 </div>`
+            ],
+            'erp': [
+                `<div class="project-card">
+                    <div class="project-content">
+                        <h3>Enterprise Resource Planner (ERP)</h3>
+                        <p>Complete business dashboard with HRM, Finance, Inventory, Sales & Biometric (WebAuthn) Login. Full-featured ERP solution for modern businesses.</p>
+                        <div class="skill-tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">WebAuthn</span><span class="tag">TypeScript</span></div>
+                    </div>
+                 </div>`
+            ],
+            'wefixtech': [
+                `<div class="project-card">
+                    <div class="project-content">
+                        <h3>WeFix Tech - E-Commerce Store</h3>
+                        <p>Modern e-commerce platform with React frontend and secure Stripe payment integration. Seamless shopping experience for tech repairs.</p>
+                        <div class="skill-tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Tailwind</span><span class="tag">Stripe</span><span class="tag">PHP</span></div>
+                    </div>
+                 </div>`
+            ],
+            'summarizer': [
+                `<div class="project-card">
+                    <div class="project-content">
+                        <h3>Intelligent Document Summarizer</h3>
+                        <p class="duration">Sep 2024 - Oct 2024 | ITSOLERA PVT LTD</p>
+                        <p>NLP & Transformers-powered system to summarize large documents. Export summaries as .docx, .pdf, or .txt formats.</p>
+                        <div class="skill-tags"><span class="tag">NLP</span><span class="tag">Transformers</span><span class="tag">Python</span><span class="tag">AI</span></div>
+                    </div>
+                 </div>`
+            ],
+            'texttoimage': [
+                `<div class="project-card">
+                    <div class="project-content">
+                        <h3>Text to Image Generator</h3>
+                        <p class="duration">Jul 2024 - Aug 2024 | ITSOLERA PVT LTD</p>
+                        <p>StyleGAN-based generator using CLIP, PyTorch, and Streamlit. Transform text descriptions into stunning images.</p>
+                        <div class="skill-tags"><span class="tag">StyleGAN</span><span class="tag">CLIP</span><span class="tag">PyTorch</span><span class="tag">Streamlit</span></div>
+                    </div>
+                 </div>`
+            ],
+            'digitgen': [
+                `<div class="project-card">
+                    <div class="project-content">
+                        <h3>Handwritten Digit Generator</h3>
+                        <p class="duration">Aug 2024 - Sep 2024 | ITSOLERA PVT LTD</p>
+                        <p>GAN-based generator creating realistic handwritten digits. Deep understanding of generator/discriminator architecture and CNN filters.</p>
+                        <div class="skill-tags"><span class="tag">GANs</span><span class="tag">CNN</span><span class="tag">Python</span><span class="tag">Deep Learning</span></div>
+                    </div>
+                 </div>`
+            ],
+            'ahs': [
+                `<div class="project-card">
+                    <div class="project-content">
+                        <h3>AHS Technologies Website</h3>
+                        <p>Modern, responsive website showcasing innovative IT solutions. Built with React, Vite, and TailwindCSS for optimal performance.</p>
+                        <div class="skill-tags"><span class="tag">React</span><span class="tag">Vite</span><span class="tag">Tailwind</span><span class="tag">TypeScript</span></div>
+                    </div>
+                 </div>`
+            ],
+            'ahsmed': [
+                `<div class="project-card">
+                    <div class="project-content">
+                        <h3>AHS MED - Medical Billing Services</h3>
+                        <p>Modern website for medical billing services with integrated AI chatbot. Seamless user experience with React and TypeScript.</p>
+                        <div class="skill-tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Tailwind</span><span class="tag">Chatbot</span></div>
+                    </div>
+                 </div>`
+            ],
+            'utbuilders': [
+                `<div class="project-card">
+                    <div class="project-content">
+                        <h3>U&T Builders & Developers</h3>
+                        <p>Elegant architecture and construction company website with project showcase and pricing plans. Built for precision and style.</p>
+                        <div class="skill-tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Tailwind</span></div>
+                    </div>
+                 </div>`
+            ],
+            'bakery': [
+                `<div class="project-card">
+                    <div class="project-content">
+                        <h3>Wah Sweet & Bakers</h3>
+                        <p>Responsive bakery website showcasing products and catalogue with modern design and smooth animations.</p>
+                        <div class="skill-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+                    </div>
+                 </div>`
+            ],
+            'modative': [
+                `<div class="project-card">
+                    <div class="project-content">
+                        <h3>Modative - Company Website</h3>
+                        <p>Full-fledged architectural company website with multiple pages, showcasing portfolio and services.</p>
+                        <div class="skill-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+                    </div>
+                 </div>`
+            ],
+            'tooty': [
+                `<div class="project-card">
+                    <div class="project-content">
+                        <h3>Tooty AI Chatbot Portfolio</h3>
+                        <p>Advertisement website for company AI chatbot featuring interactive demos and service information.</p>
+                        <div class="skill-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+                    </div>
+                 </div>`
+            ],
+            'employapi': [
+                `<div class="project-card">
+                    <div class="project-content">
+                        <h3>EMPLOYMEE - RESTful API</h3>
+                        <p>Full CRUD RESTful API built with ASP.NET Core, integrated with SQL database using Code First Approach.</p>
+                        <div class="skill-tags"><span class="tag">ASP.NET Core</span><span class="tag">C#</span><span class="tag">MySQL</span><span class="tag">REST API</span></div>
+                    </div>
+                 </div>`
+            ],
+            'studentsys': [
+                `<div class="project-card">
+                    <div class="project-content">
+                        <h3>Student Management Systems</h3>
+                        <p><strong>Java Web App:</strong> Dual-module system (admin/student) with CRUD operations using Java Servlets and JDBC.<br><br>
+                        <strong>C++ Terminal:</strong> Data structures-based system with CRUD operations.<br><br>
+                        <strong>Java GUI:</strong> Desktop application with file handling using OOP principles.</p>
+                        <div class="skill-tags"><span class="tag">Java</span><span class="tag">C++</span><span class="tag">JDBC</span><span class="tag">OOP</span></div>
+                    </div>
+                 </div>`
+            ],
+            'simpleauth': [
+                `<div class="project-card">
+                    <div class="project-content">
+                        <h3>Simple Web Authentication</h3>
+                        <p>Biometric authentication system using SimpleWebAuthn server for fingerprint login functionality.</p>
+                        <div class="skill-tags"><span class="tag">WebAuthn</span><span class="tag">Biometrics</span><span class="tag">Node.js</span></div>
+                    </div>
+                 </div>`
+            ],
+            'calculator': [
+                `<div class="project-card">
+                    <div class="project-content">
+                        <h3>Assembly Calculator (x86)</h3>
+                        <p>Menu-driven calculator for arithmetic operations (addition, subtraction, multiplication, division) using loops and procedures.</p>
+                        <div class="skill-tags"><span class="tag">x86 Assembly</span><span class="tag">Low-level</span></div>
+                    </div>
+                 </div>`
+            ]
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const chatBody = document.getElementById('chat-body');
+            const nameInputArea = document.getElementById('name-input-area');
+            const nameInput = document.getElementById('name-input');
+            const startChatBtn = document.getElementById('start-chat-btn');
+            const optionsArea = document.getElementById('options-area');
+            const chatStatus = document.getElementById('chat-status');
+
+            let userName = '';
+            let typingIndicator;
+            let currentMenu = 'mainMenu';
+
+            const getTimestamp = () => {
+                const now = new Date();
+                return `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+            };
+
+            const scrollChatToBottom = () => {
+                chatBody.scrollTop = chatBody.scrollHeight;
+            };
+
+            const showTypingIndicator = () => {
+                chatStatus.textContent = 'typing...';
+                typingIndicator = document.createElement('div');
+                typingIndicator.className = 'chat-bubble bot typing';
+                typingIndicator.innerHTML = `<div class="typing-indicator"><span></span><span></span><span></span></div>`;
+                chatBody.appendChild(typingIndicator);
+                scrollChatToBottom();
+            };
+
+            const hideTypingIndicator = () => {
+                chatStatus.textContent = 'online';
+                if (typingIndicator) {
+                    chatBody.removeChild(typingIndicator);
+                    typingIndicator = null;
+                }
+            };
+
+            const showUserMessage = (text) => {
+                const messageEl = document.createElement('div');
+                messageEl.className = 'chat-bubble user';
+                messageEl.innerHTML = `
+                    ${text}
+                    <span class="timestamp">${getTimestamp()} <i class="fas fa-check-double"></i></span>
+                `;
+                chatBody.appendChild(messageEl);
+                scrollChatToBottom();
+            };
+
+            const showBotMessage = (htmlContent, delay = 0) => {
+                setTimeout(() => {
+                    const messageEl = document.createElement('div');
+                    messageEl.className = 'chat-bubble bot';
+                    messageEl.innerHTML = `
+                        ${htmlContent}
+                        <span class="timestamp">${getTimestamp()}</span>
+                    `;
+                    chatBody.appendChild(messageEl);
+                    scrollChatToBottom();
+                }, delay);
+            };
+
+            const showMenu = (menuKey) => {
+                let menuData;
+                if (menuKey === 'mainMenu') {
+                    menuData = mainMenu;
+                    currentMenu = 'mainMenu';
+                } else if (subMenus[menuKey]) {
+                    menuData = subMenus[menuKey];
+                    currentMenu = menuKey;
+                } else {
+                    return;
+                }
+                
+                optionsArea.innerHTML = '';
+                for (const key in menuData) {
+                    const item = menuData[key];
+                    const button = document.createElement('button');
+                    button.dataset.option = key;
+                    button.dataset.submenu = item.subMenu || '';
+                    button.innerHTML = `<i class="${item.icon}"></i> ${item.title}`;
                     
-                    window.scrollTo({
-                         top: offsetPosition,
-                         behavior: "smooth"
-                    });
+                    if(item.isBack) {
+                        button.classList.add('back-button');
+                    }
                     
-                    document.querySelector('.nav-links').classList.remove('active');
+                    optionsArea.appendChild(button);
+                }
+                optionsArea.style.display = 'flex';
+                nameInputArea.style.display = 'none';
+            };
+
+            const showMainMenuPrompt = () => {
+                const welcomeMsg = `How can I help you, ${userName}?`;
+                showBotMessage(welcomeMsg);
+                showMenu('mainMenu');
+            };
+
+            const handleStartChat = () => {
+                userName = nameInput.value.trim();
+                if (!userName) {
+                    userName = 'Guest';
+                }
+                
+                showUserMessage(nameInput.value.trim() ? `My name is ${userName}` : `Hi!`);
+                nameInputArea.style.display = 'none';
+                
+                showTypingIndicator();
+                setTimeout(() => {
+                    hideTypingIndicator();
+                    showBotMessage(`Welcome to my interactive portfolio, ${userName}!`, 0);
+                    showBotMessage(
+                        `I'm Aashan's portfolio bot. Navigate my journey by selecting any option below.`, 750
+                    );
+                    
+                    setTimeout(() => {
+                        showMenu('mainMenu');
+                    }, 1000);
+
+                }, 1500);
+            };
+
+            const handleOptionClick = (optionKey, buttonText, subMenuKey) => {
+                showUserMessage(buttonText);
+                optionsArea.style.display = 'none';
+                
+                showTypingIndicator();
+                setTimeout(() => {
+                    hideTypingIndicator();
+                    
+                    if (optionKey === 'menu' || optionKey === 'projectsMenu' || optionKey === 'skillsMenu') {
+                        if (optionKey === 'menu') {
+                            showMainMenuPrompt();
+                        } else {
+                            showBotMessage(`Sure! Let me show you the options.`);
+                            showMenu(optionKey);
+                        }
+                        return;
+                    }
+                    
+                    if (subMenuKey && subMenus[subMenuKey]) {
+                        showBotMessage(`Great choice! Here's what I have for **${buttonText}**.`);
+                        showMenu(subMenuKey);
+                        return;
+                    }
+                    
+                    const messages = messageData[optionKey];
+                    if (messages) {
+                        let messageDelay = 0;
+                        messages.forEach(msgHtml => {
+                            showBotMessage(msgHtml, messageDelay);
+                            messageDelay += 750;
+                        });
+                        
+                        setTimeout(() => {
+                            if (currentMenu !== 'mainMenu' && subMenus[currentMenu]) {
+                                showBotMessage('What else would you like to explore?');
+                                showMenu(currentMenu);
+                            } else {
+                                showMainMenuPrompt();
+                            }
+                        }, messageDelay + 500);
+                    }
+                    
+                }, 1000);
+            };
+
+            startChatBtn.addEventListener('click', handleStartChat);
+            nameInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    handleStartChat();
                 }
             });
-        });
 
-        // WhatsApp Chat Toggle
-        function toggleChat() {
-            document.getElementById('whatsappChat').classList.toggle('active');
-        }
+            optionsArea.addEventListener('click', (e) => {
+                const button = e.target.closest('button');
+                if (!button) return;
 
-        // Send WhatsApp Message
-        function sendWhatsApp() {
-            const input = document.getElementById('whatsappInput');
-            const message = input.value.trim();
+                const optionKey = button.dataset.option;
+                const subMenuKey = button.dataset.submenu;
+                const buttonText = button.textContent.trim();
+                
+                handleOptionClick(optionKey, buttonText, subMenuKey);
+            });
             
-            if (message) {
-                // Updated with Aashan's number
-                const phoneNumber = '923157692998'; 
-                const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-                window.open(whatsappURL, '_blank');
-                input.value = '';
-            }
-        }
+            const addDatePill = () => {
+                const dateEl = document.createElement('div');
+                dateEl.className = 'date-separator';
+                dateEl.textContent = 'TODAY';
+                chatBody.appendChild(dateEl);
+            };
+            
+            addDatePill();
+            showBotMessage("Hi! This is Aashan's interactive portfolio. To get started, what's your name?", 500);
 
-        // Allow Enter key to send message
-        document.getElementById('whatsappInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                sendWhatsApp();
-            }
         });
-
-        // Contact Form JS removed as form was deleted.
-
     </script>
+
 </body>
 </html>
