@@ -1,8 +1,8 @@
 # Aashan Shehzad - Full Stack Developer
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/aashanshehzad)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aashan-shehzad-7b659a276/)
 [![Company Portfolio](https://img.shields.io/badge/Portfolio-FF6F61?style=for-the-badge&logo=googledrive&logoColor=white)](https://ashtech-portfolio.vercel.app)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:aashanshehzad@example.com)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:shehzadaashan@gmail.com)
 
 ---
 
@@ -143,8 +143,8 @@ Currently exploring **Cybersecurity & SOC Analyst** roles, focusing on secure co
 
 ## **Contact Me**
 
-- **Email:** aashanshehzad@example.com  
-- **LinkedIn:** [linkedin.com/in/aashanshehzad](https://linkedin.com/in/aashanshehzad)  
+- **Email:** shehzadaashan@gmail.com  
+- **LinkedIn:** [linkedin.com/in/aashan-shehzad-7b659a276/]([https://linkedin.com/in/aashanshehzad](https://www.linkedin.com/in/aashan-shehzad-7b659a276/))  
 - **Company Portfolio:** [ashtech-portfolio.vercel.app](https://ashtech-portfolio.vercel.app)  
 
 ---
