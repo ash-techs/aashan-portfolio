@@ -144,7 +144,7 @@ Currently exploring **Cybersecurity & SOC Analyst** roles, focusing on secure co
 ## **Contact Me**
 
 - **Email:** shehzadaashan@gmail.com  
-- **LinkedIn:** [linkedin.com/in/aashan-shehzad-7b659a276/]([https://linkedin.com/in/aashanshehzad](https://www.linkedin.com/in/aashan-shehzad-7b659a276/))  
+- **LinkedIn:** [linkedin.com/in/aashan-shehzad]([https://linkedin.com/in/aashanshehzad](https://www.linkedin.com/in/aashan-shehzad-7b659a276/))  
 - **Company Portfolio:** [ashtech-portfolio.vercel.app](https://ashtech-portfolio.vercel.app)  
 
 ---
