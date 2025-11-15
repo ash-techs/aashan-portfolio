@@ -1,165 +1,151 @@
-Aashan Shehzad – Full-Stack Developer & Cybersecurity Enthusiast
+# Aashan Shehzad - Full Stack Developer
 
-About Me
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/aashanshehzad)
+[![Company Portfolio](https://img.shields.io/badge/Portfolio-FF6F61?style=for-the-badge&logo=googledrive&logoColor=white)](https://ashtech-portfolio.vercel.app)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:aashanshehzad@example.com)
 
-BSCS graduate and passionate Full-Stack & Software Developer with hands-on experience in:
+---
 
-Frontend: React.js, TypeScript, JavaScript, Tailwind CSS, HTML, CSS, Bootstrap
+## About Me
+BSCS graduate and passionate Full Stack & Software Developer with hands-on experience in:  
+**Frontend:** React.js, TypeScript, JavaScript, Tailwind CSS, HTML, CSS, Bootstrap  
+**Backend:** Node.js, PHP, Python, ASP.NET Core  
+**Databases:** PostgreSQL, MySQL, SQL  
+**Other Skills:** Solidity, Blockchain, WebAuthn basics, OOP, Data Structures, UI/UX & Graphic Design  
 
-Backend: Node.js, Python, PHP, ASP.NET Core
+Currently exploring **Cybersecurity & SOC Analyst** roles, focusing on secure coding, threat monitoring, and application protection.  
 
-Databases: PostgreSQL, MySQL, SQL
+---
 
-Other Skills: Blockchain, WebAuthn, AI/ML, Cybersecurity fundamentals
+## **Skills & Tools**
 
-Certifications: SIEM Analyst, Penetration Testing, AI Fundamentals, Cybersecurity
+<details>
+<summary>Frontend & Web Development</summary>
 
-I build efficient, scalable, and secure web and software applications while focusing on UI/UX design, innovation, and secure coding practices.
+- ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+- ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+- ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+- ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+- ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+- ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
 
-Table of Contents
+</details>
 
-Portfolio
+<details>
+<summary>Backend & Databases</summary>
 
-Skills
+- ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+- ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+- ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+- ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+- ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
-Projects
+</details>
 
-Certifications
+<details>
+<summary>Other Skills & Tools</summary>
 
-Social Profiles
+- WebAuthn / Fingerprint Authentication
+- Enterprise Resource Planner (ERP)
+- Stripe Checkout & E-Commerce Integration
+- Blockchain & Solidity
+- Machine Learning & AI (NLP, GANs, StyleGAN)
+- Graphic Design & UI/UX (Canva)
 
-Setup Instructions
+</details>
 
-Future Enhancements
+---
 
-Portfolio
+## **Projects**
 
-Check out my portfolio: ASH TECH Portfolio
+<details>
+<summary>DDOS Attack Detection & Recommendation System</summary>
 
-Skills
-Web Development & Programming
+- **Duration:** Sep 2024 – Jun 2025  
+- **Skills:** Machine Learning, AI, Cybersecurity, ML Algorithms  
+- Detects DDoS attacks on ICMP, TCP, UDP.  
+- **Project Type:** Final Year Project  
 
-React.js, TypeScript, JavaScript
+</details>
 
-Node.js, Python, PHP, C#, C++, Java
+<details>
+<summary>Authentication using Blockchain</summary>
 
-HTML, CSS, Bootstrap, Tailwind CSS
+- **Duration:** Jan 2025 – Mar 2025  
+- **Skills:** PHP, Solidity, Hardhat, Blockchain  
+- Integrated blockchain-based web authentication for PHP application.  
 
-REST APIs, ASP.NET MVC, ADO.NET, Entity Framework
+</details>
 
-ERP & Dashboard Development
+<details>
+<summary>Intelligent Document Summarizer</summary>
 
-Cybersecurity & Blockchain
+- **Duration:** Sep 2024 – Oct 2024  
+- **Skills:** NLP, Transformers, Gen AI  
+- Summarizes large texts into desired word count; output in `.docx`, `.txt`, or `.pdf`.  
 
-WebAuthn & Fingerprint Authentication
+</details>
 
-SIEM, SOAR, PAM, SAN, NAS basics
+<details>
+<summary>Handwritten Digit Generator</summary>
 
-Blockchain Authentication Projects
+- **Duration:** Aug 2024 – Sep 2024  
+- **Skills:** GANs, AI  
+- Generates handwritten-like digits using generator/discriminator concepts.  
 
-AI & ML
+</details>
 
-Machine Learning, NLP, Gen AI
+<details>
+<summary>Text to Image Generator</summary>
 
-DDOS Attack Detection & Recommendation System
+- **Duration:** Jul 2024 – Aug 2024  
+- **Skills:** StyleGAN, CLIP, Torch, Streamlit  
+- Generates images based on text input.  
 
-StyleGAN, Text-to-Image Generators
+</details>
 
-Tools & Platforms
+<details>
+<summary>Web & Software Projects</summary>
 
-Git, GitHub, Vite, VSCode
+- **AHS Technologies Website:** React, Tailwind CSS, TypeScript  
+- **Advance Health Services (AHS MED):** React, Tailwind CSS, TypeScript, Chatbot  
+- **Bakery Website:** HTML, CSS, JavaScript  
+- **Enterprise Resource Planner (ERP):** React, Node.js, Tailwind CSS, WebAuthn, PostgreSQL  
+- **Student Management System (Java):** Java, JDBC, OOP  
+- **Menu-Driven Calculator (x86 Assembly)**  
+- **Modative Website:** HTML, CSS, JavaScript  
+- **Portfolio Projects (Personal & Clients):** HTML, CSS, JS, Canva  
+- **Wefixtech E-Commerce Website:** React, TypeScript, Tailwind CSS, Stripe Checkout, PHP  
 
-Canva for portfolio & graphic design
+</details>
 
-Stripe Checkout for E-commerce
+---
 
-Projects
-1. DDOS Attack Detection & Recommendation System
+## **Certifications**
 
-Duration: Sep 2024 – Jun 2025
+<details>
+<summary>Cybersecurity & AI</summary>
 
-Skills: ML, AI, Cybersecurity
+- **SIEM Analyst Certificate** – Fortinet Learning  
+- **Penetration Testing Internship** – Hacktify Cyber Security  
+- **Gen-AI Internship** – ITSOLERA  
+- **Data Analytics** – DigiSkills  
+- **Freelancing** – DigiSkills  
+- **AI Literacy** – IBM Learning  
+- **Cybersecurity Fundamentals** – IBM Learning  
+- **Cybersecurity Certification** – FORTINET  
+- **Ivanti Endpoint Manager Certification** – Ivanti  
 
-Detects DDoS attacks across ICMP, TCP, and UDP protocols and provides mitigation strategies.
+</details>
 
-2. Authentication Using Blockchain
+---
 
-Duration: Jan 2025 – Mar 2025
+## **Contact Me**
 
-Skills: PHP, Solidity, Hardhat
+- **Email:** aashanshehzad@example.com  
+- **LinkedIn:** [linkedin.com/in/aashanshehzad](https://linkedin.com/in/aashanshehzad)  
+- **Company Portfolio:** [ashtech-portfolio.vercel.app](https://ashtech-portfolio.vercel.app)  
 
-Web authentication integrated with blockchain for secure visitor registration and login.
+---
 
-3. Intelligent Document Summarizer
-
-Duration: Sep 2024 – Oct 2024
-
-Skills: NLP, Gen AI
-
-Summarizes long text into concise paragraphs with downloadable output (.docx, .txt, .pdf).
-
-4. Handwritten Digit Generator
-
-Duration: Aug 2024 – Sep 2024
-
-Skills: GAN, Python
-
-Generates handwritten digit images using AI.
-
-5. Text to Image Generator
-
-Duration: Jul 2024 – Aug 2024
-
-Skills: StyleGAN, CLIP, Torch, Streamlit
-
-Generates images from user-provided text.
-
-6. Enterprise Resource Planner (ERP)
-
-Skills: React.js, Node.js, Tailwind CSS, PostgreSQL, WebAuthn
-
-Complete ERP solution with dashboards, HR & finance management, inventory tracking, and fingerprint authentication.
-
-7. Portfolio & Websites
-
-Projects:
-
-AHS Technologies Website – React, Tailwind CSS, TypeScript
-
-U&T Builders Website – React, Tailwind CSS, TypeScript
-
-Wefixtech E-Commerce Website – React, Stripe Checkout, Tailwind CSS
-
-Personal Portfolio – HTML, CSS, JS with EmailJS integration
-
-Certifications
-
-SIEM Analyst – Fortinet
-
-Penetration Testing Internship – Hacktify
-
-GEN-AI Internship – ITSOLERA
-
-Data Analytics & Business Intelligence – DigiSkills
-
-Freelancing Skills – DigiSkills
-
-AI Literacy & AI Fundamentals – IBM Learning
-
-Ivanti Endpoint Manager Certification
-
-Cybersecurity Fundamentals – IBM Learning
-
-Cybersecurity Certification – Fortinet
-
-Social Profiles
-
-LinkedIn: https://linkedin.com/in/aashanshehzad
-
-GitHub: https://github.com/aashanshehzad
-
-Twitter: https://twitter.com/aashanshehzad
-
-Instagram: https://www.instagram.com/aashanshehzad
-
-Portfolio: https://ashtech-portfolio.vercel.app
